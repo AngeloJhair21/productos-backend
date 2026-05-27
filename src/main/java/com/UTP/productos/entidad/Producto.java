@@ -19,6 +19,7 @@ public class Producto {
     //como es ID tiene que ir autoincremento
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //No acepta valores nulos
     @Column(nullable = false)
     private String nombre;
     @Column(nullable = false)

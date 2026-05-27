@@ -28,10 +28,12 @@ public class ProductoService {
     public Producto actualizarProducto(Long id, Producto productoDetalles){
         Optional<Producto> productoExitente = repository.findById(id);
         if (productoExitente.isPresent()) {
+            //Van a obtener cada dato
             Producto producto = productoExitente.get();
             producto.setNombre(productoDetalles.getNombre());
             producto.setPrecio(productoDetalles.getPrecio());
             producto.setCantidad(productoDetalles.getCantidad());
+            //Y lo guardara
             return repository.save(producto);
         }
         return null;
